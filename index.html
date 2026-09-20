@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#05070A">
-<meta name="description" content="Sunethra Nagaraj | Regional Programming Director, storyteller and AI-first creative director. Interactive portfolio of campaigns, original IPs and career signal.">
-<title>Sunethra Nagaraj | On Air</title>
+<meta name="description" content="Sunethra Nagaraj | Creative Director, storyteller and founder building AI-enabled brand campaigns. Interactive portfolio of campaigns, original IPs and career signal.">
+<title>Sunethra Nagaraj | Creative Director</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -330,7 +330,28 @@ h2.section-title{
 .log-role{font-family:var(--display);font-size:clamp(18px,2.4vw,26px);color:var(--paper);margin-bottom:6px;}
 .log-org{font-family:var(--mono);font-size:12px;color:var(--paper-dim);letter-spacing:1px;margin-bottom:14px;text-transform:uppercase;}
 .log-detail{color:var(--paper-dim);font-size:14.5px;line-height:1.65;max-width:680px;}
-.log-detail li{margin-left:18px;margin-bottom:6px;}
+ul.log-detail{list-style:none;}
+.log-detail li{margin-left:18px;margin-bottom:8px;position:relative;}
+.log-detail li::before{content:'▸';color:var(--cyan);position:absolute;left:-18px;}
+.log-arrow,.role-arrow{color:var(--cyan);font-size:0.8em;margin:0 2px;}
+
+/* ---------- bandwidth (skills) ---------- */
+.skill-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.skill-cell{
+  background:var(--panel);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:26px 24px;transition:background .25s ease;
+}
+.skill-cell:hover{ background:var(--panel2); }
+.skill-name{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:1.5px;color:var(--cyan);
+  text-transform:uppercase;margin-bottom:12px;text-shadow:0 0 10px var(--cyan-soft);
+}
+.skill-list{color:var(--paper-dim);font-size:14px;line-height:1.65;}
+@media(max-width:780px){ .skill-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:520px){ .skill-grid{grid-template-columns:1fr;} }
 @media(max-width:640px){ .log-item{grid-template-columns:1fr;gap:8px;} }
 
 /* ---------- now playing ---------- */
@@ -453,6 +474,24 @@ h2.section-title{
   .deck-readout{padding:28px 22px;}
 }
 
+/* ---------- new signals (ventures) ---------- */
+.venture-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.venture-card{
+  background:var(--panel);padding:32px 26px;display:flex;flex-direction:column;gap:14px;
+  text-decoration:none;color:inherit;position:relative;
+  border-top:3px solid var(--cyan);
+  transition:background .2s ease, transform .2s ease;
+}
+.venture-card:hover{background:var(--panel2);transform:translateY(-2px);}
+.venture-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;color:var(--cyan);text-transform:uppercase;}
+.venture-name{font-family:var(--display);font-size:clamp(22px,2.6vw,28px);color:var(--paper);}
+.venture-desc{font-size:14px;line-height:1.65;color:var(--paper-dim);flex:1;}
+.venture-link{font-family:var(--mono);font-size:11.5px;letter-spacing:1px;color:var(--paper);display:flex;align-items:center;gap:8px;margin-top:2px;}
+.venture-link span{transition:transform .2s ease;}
+.venture-card:hover .venture-link{color:var(--cyan);}
+.venture-card:hover .venture-link span{transform:translateX(4px);}
+@media(max-width:860px){ .venture-grid{grid-template-columns:1fr;} }
+
 /* ---------- the band ---------- */
 .band-layout{display:flex;justify-content:center;}
 .band-list{list-style:none;max-width:740px;width:100%;}
@@ -476,6 +515,7 @@ h2.section-title{
 .chart-name{font-family:var(--body);font-weight:600;font-size:16px;color:var(--paper);}
 .chart-org{font-family:var(--mono);font-size:11.5px;color:var(--paper-dim);margin-top:3px;letter-spacing:.5px;}
 .chart-year{font-family:var(--mono);font-size:12px;color:var(--paper-dim);}
+.sub-heading{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;margin:44px 0 4px;text-shadow:0 0 12px var(--cyan-soft);}
 
 /* ---------- sign off ---------- */
 .signoff{align-items:flex-start;}
@@ -528,11 +568,13 @@ h2.section-title{
   <a href="#s0" class="preset-dot" data-idx="0"><span class="preset-label">ON AIR</span></a>
   <a href="#s1" class="preset-dot" data-idx="1"><span class="preset-label">SIGNAL STRENGTH</span></a>
   <a href="#s2" class="preset-dot" data-idx="2"><span class="preset-label">FREQUENCY LOG</span></a>
-  <a href="#s3" class="preset-dot" data-idx="3"><span class="preset-label">NOW PLAYING</span></a>
-  <a href="#s4" class="preset-dot" data-idx="4"><span class="preset-label">SIGNAL DECODER</span></a>
-  <a href="#s5" class="preset-dot" data-idx="5"><span class="preset-label">THE BAND</span></a>
-  <a href="#s6" class="preset-dot" data-idx="6"><span class="preset-label">ON THE CHARTS</span></a>
-  <a href="#s7" class="preset-dot" data-idx="7"><span class="preset-label">SIGN OFF</span></a>
+  <a href="#s3" class="preset-dot" data-idx="3"><span class="preset-label">BANDWIDTH</span></a>
+  <a href="#s4" class="preset-dot" data-idx="4"><span class="preset-label">NOW PLAYING</span></a>
+  <a href="#s5" class="preset-dot" data-idx="5"><span class="preset-label">SIGNAL DECODER</span></a>
+  <a href="#s6" class="preset-dot" data-idx="6"><span class="preset-label">NEW SIGNALS</span></a>
+  <a href="#s7" class="preset-dot" data-idx="7"><span class="preset-label">THE BAND</span></a>
+  <a href="#s8" class="preset-dot" data-idx="8"><span class="preset-label">ON THE CHARTS</span></a>
+  <a href="#s9" class="preset-dot" data-idx="9"><span class="preset-label">SIGN OFF</span></a>
 </nav>
 
 <!-- HERO -->
@@ -542,8 +584,8 @@ h2.section-title{
       <div class="hero-text">
         <div class="hero-freq" style="font-family:var(--mono);color:var(--paper-dim);font-size:13px;letter-spacing:4px;margin-bottom:26px;">CH. 01 | SIGNAL ACQUIRED</div>
         <h1 class="name"><span class="scramble" id="scrambleName">SUNETHRA NAGARAJ</span></h1>
-        <div class="role-line">CONTENT STRATEGIST | STORY TELLER | SOCIAL MEDIA | AI FIRST CREATIVE DIRECTOR</div>
-        <p class="hero-sub">16 years on air and online, from a Kannada radio console to <strong class="hl-cyan">6M+ monthly listeners and followers</strong> across Instagram, YouTube and beyond. A radio voice millions recognize, an actor, storyteller and creative leader who has shaped culture across platforms. Today, she builds AI-first content ecosystems, leading large creative teams where technology amplifies imagination and every story is designed to leave a lasting impact. This isn't a résumé. It's a dial. <strong>Scroll to tune through it.</strong></p>
+        <div class="role-line">CREATIVE DIRECTOR | INTEGRATED BRAND CAMPAIGNS | AI-ENABLED STORYTELLING | FOUNDER</div>
+        <p class="hero-sub">16+ years across agency-style and in-house creative environments, turning complex ideas into clear, human stories. Leads a <strong class="hl-cyan">36-person creative team</strong> at Radio City and has built and launched multiple brands and digital products from zero, including a marketing agency, an influencer marketing platform, an artist discovery platform and a podcast platform. Delivered insight-led campaigns for 50+ advertisers with a 95%+ client retention rate, and pioneered an AI-first workflow, one of India's first AI RJs among them, that cut agency dependence by 30 to 40% and reached <strong class="hl-cyan">6M+ monthly users</strong>. Native storytelling in five languages. This isn't a résumé. It's a dial. <strong>Scroll to tune through it.</strong></p>
         <div class="scroll-cue"><span class="dial-icon"></span> KEEP TURNING</div>
       </div>
       <div class="hero-feed-card">
@@ -579,11 +621,11 @@ h2.section-title{
     <p class="section-intro reveal">What sixteen years of building audiences, teams and revenue reads out on the meter.</p>
     <div class="meter-grid reveal">
       <div class="meter-cell"><div class="meter-value" data-count="6" data-suffix="M+">0</div><div class="meter-label">Monthly audience reach across platforms</div><div class="vu-bar"><div class="vu-bar-fill" data-fill="92"></div></div><div class="vu-readout">SIG <span>92%</span></div></div>
-      <div class="meter-cell"><div class="meter-value">₹18–22<span class="suffix">Cr</span></div><div class="meter-label">Annual business impact delivered</div><div class="vu-bar"><div class="vu-bar-fill" data-fill="88"></div></div><div class="vu-readout">SIG <span>88%</span></div></div>
+      <div class="meter-cell"><div class="meter-value">₹35<span class="suffix">Cr</span></div><div class="meter-label">Incremental revenue from 15+ original digital IPs</div><div class="vu-bar"><div class="vu-bar-fill" data-fill="88"></div></div><div class="vu-readout">SIG <span>88%</span></div></div>
       <div class="meter-cell"><div class="meter-value" data-count="300" data-suffix="%">0</div><div class="meter-label">Organic engagement growth</div><div class="vu-bar"><div class="vu-bar-fill" data-fill="96"></div></div><div class="vu-readout">SIG <span>96%</span></div></div>
       <div class="meter-cell"><div class="meter-value" data-count="40" data-suffix="%">0</div><div class="meter-label">Year-on-year audience growth</div><div class="vu-bar"><div class="vu-bar-fill" data-fill="70"></div></div><div class="vu-readout">SIG <span>70%</span></div></div>
-      <div class="meter-cell"><div class="meter-value" data-count="26" data-suffix="">0</div><div class="meter-label">Person team built, mentored and led</div><div class="vu-bar"><div class="vu-bar-fill" data-fill="60"></div></div><div class="vu-readout">SIG <span>60%</span></div></div>
-      <div class="meter-cell"><div class="meter-value" data-count="95" data-suffix="%+">0</div><div class="meter-label">Advertiser / client retention rate</div><div class="vu-bar"><div class="vu-bar-fill" data-fill="98"></div></div><div class="vu-readout">SIG <span>98%</span></div></div>
+      <div class="meter-cell"><div class="meter-value" data-count="36" data-suffix="">0</div><div class="meter-label">Person creative team built, mentored and led</div><div class="vu-bar"><div class="vu-bar-fill" data-fill="72"></div></div><div class="vu-readout">SIG <span>72%</span></div></div>
+      <div class="meter-cell"><div class="meter-value" data-count="95" data-suffix="%+">0</div><div class="meter-label">Advertiser and client retention rate</div><div class="vu-bar"><div class="vu-bar-fill" data-fill="98"></div></div><div class="vu-readout">SIG <span>98%</span></div></div>
     </div>
   </div>
 </section>
@@ -599,32 +641,94 @@ h2.section-title{
         <div class="log-freq">91.1<span>2021–Present</span></div>
         <div>
           <div class="log-role">Regional Programming Director | Digital &amp; Terrestrial Content Strategy</div>
-          <div class="log-org">Radio City (Jagran Group)</div>
-          <div class="log-detail">Strategy and growth across 10+ regional digital properties. Scaled reach past 6M monthly users, delivered 40% YoY growth through Meta and Google partnerships, launched 15+ monetised digital IPs, and cut agency dependence by 30–40% by building the capability in-house.</div>
+          <div class="log-org">Radio City (Jagran Group), Bengaluru</div>
+          <ul class="log-detail">
+            <li>Leads a matrixed team of 36+ creative, digital and communications professionals across a multi-brand portfolio.</li>
+            <li>Took three digital products from concept to scaled platforms, Sminco, Muzartdisco and RC Swappr, contributing to a 40% shift in market share.</li>
+            <li>Launched one of India's first AI RJs and a first-of-its-kind chatbot for daily show interactions and contests.</li>
+            <li>Built a digital ecosystem reaching 6M+ people, with storytelling created natively for six Indian languages rather than one script translated six times.</li>
+            <li>Cut agency dependence by 30 to 40% with an AI-first, in-house production model, while managing agencies, celebrities and government stakeholders.</li>
+          </ul>
         </div>
       </div>
       <div class="log-item">
         <div class="log-freq">91.1<span>2012–2021</span></div>
         <div>
-          <div class="log-role">Associate Programming Director and RJ</div>
-          <div class="log-org">Radio City (Jagran Group)</div>
-          <div class="log-detail">Ran social growth and digital engagement across multiple station brands, executed campaigns with 50+ national and regional advertisers, and built deep fluency in youth audience behaviour and community building.</div>
+          <div class="log-role">Radio Jockey <span class="log-arrow">→</span> Senior Producer <span class="log-arrow">→</span> Programming Director</div>
+          <div class="log-org">Radio City (Jagran Group), Bengaluru</div>
+          <ul class="log-detail">
+            <li>Set editorial standards and brand-safety guardrails across 10+ regional digital assets, aligned to a ₹120Cr annual revenue roadmap, delivering 95%+ advertiser and client retention.</li>
+            <li>Built a scalable editorial framework and cross-functional workflow across social, design and creative teams, achieving 100% editorial alignment across 10+ regional personalities.</li>
+            <li>Launched 15+ original digital IPs generating ₹35Cr in incremental revenue, tracked through Meta Insights, YouTube Analytics and Tableau.</li>
+            <li>Built creator and brand partnerships with 50+ national and regional advertisers.</li>
+          </ul>
         </div>
       </div>
       <div class="log-item">
-        <div class="log-freq">007<span>Kannada Cinema</span></div>
+        <div class="log-freq">007<span>2014–2024</span></div>
         <div>
-          <div class="log-role">Co-Founder</div>
-          <div class="log-org">StarFab Productions</div>
-          <div class="log-detail">Founded a branded content studio; ran digital promotion for Kannada film releases- Operation Alamelamma, Kavaludaari, Ramana Avatara, Aatagara- end to end, from creator collaborations to release-day campaigns. Worked as line producers for Kannada movie Ramana Avatara</div>
+          <div class="log-role">Co-Founder &amp; Creative Director</div>
+          <div class="log-org">StarFab Productions, marketing agency &amp; film production, Bengaluru</div>
+          <ul class="log-detail">
+            <li>Built a branded-content and marketing agency from the ground up, owning creative direction, campaign strategy, client relationships and full P&amp;L.</li>
+            <li>Worked with brands including Max, WhiteHat Jr, Fortis Hospital, Ramraj and Koskii on in-film branding.</li>
+            <li>Line Producer on the feature film Ramana Avatara (2024); led end-to-end social and digital marketing for 5+ major Kannada film releases.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="log-item">
+        <div class="log-freq">B2B<span>2025–Present</span></div>
+        <div>
+          <div class="log-role">Director, Growth, Marketing &amp; Customer Acquisition</div>
+          <div class="log-org">Infranite Traders Pvt. Ltd.</div>
+          <div class="log-detail">Building a 0-to-1 digital model for B2B stone sales, moving a traditional, relationship-led process online. Handles international vendor sourcing, brand positioning and new-market creation with architects, interior designers and builders.</div>
+        </div>
+      </div>
+      <div class="log-item">
+        <div class="log-freq">B2C<span>2016–2023</span></div>
+        <div>
+          <div class="log-role">Director, Growth, Marketing &amp; Customer Acquisition</div>
+          <div class="log-org">Insurebee Insurance Brokers Pvt. Ltd.</div>
+          <div class="log-detail">Drove customer acquisition and top-of-funnel growth across digital and on-ground channels, SEO, email, conversion optimisation and auto-show acquisition drives, building pipelines from high-intent audiences.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- BANDWIDTH -->
+<section class="section" id="s3" data-freq="99.0" data-station="BANDWIDTH">
+  <div class="wrap">
+    <div class="eyebrow reveal">Bandwidth</div>
+    <h2 class="section-title reveal">Full spectrum.</h2>
+    <p class="section-intro reveal">Five bands she operates across, from concept to code.</p>
+    <div class="skill-grid reveal">
+      <div class="skill-cell">
+        <div class="skill-name">Creative Direction</div>
+        <div class="skill-list">Concept development, art direction, copywriting, brand storytelling, integrated campaigns, film and branded content, experiential and events, OOH, mobile, social and interactive.</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-name">Strategy &amp; Leadership</div>
+        <div class="skill-list">Insight to proposition to execution, brand strategy, stakeholder alignment, cross-functional leadership, agency and freelancer oversight, team building and mentorship.</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-name">AI &amp; Emerging Tech</div>
+        <div class="skill-list">Generative AI in creative workflows, prompt and context engineering, AI voice and chatbots, AI-assisted analytics and reporting, editorial governance and brand safety, new-platform storytelling.</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-name">Localisation &amp; Markets</div>
+        <div class="skill-list">Campaign localisation across languages and markets, cultural and regional insight, celebrity and government stakeholder management. Fluent in English, Hindi, Tamil, Telugu and Kannada.</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-name">Tools</div>
+        <div class="skill-list">Meta Insights, YouTube Analytics, Tableau, Google AI tools.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- NOW PLAYING -->
-<section class="section" id="s3" data-freq="100.5" data-station="NOW PLAYING">
+<section class="section" id="s4" data-freq="100.5" data-station="NOW PLAYING">
   <div class="wrap">
     <div class="eyebrow reveal">Now Playing</div>
     <h2 class="section-title reveal">Show reel, cued up.</h2>
@@ -821,11 +925,11 @@ h2.section-title{
 </section>
 
 <!-- SIGNAL DECODER -->
-<section class="section" id="s4" data-freq="103.8" data-station="SIGNAL DECODER">
+<section class="section" id="s5" data-freq="103.8" data-station="SIGNAL DECODER">
   <div class="wrap">
     <div class="eyebrow reveal">Signal Decoder</div>
     <h2 class="section-title reveal">Inside the campaigns.</h2>
-    <p class="section-intro reveal">Seven signals, decoded: the insight behind each idea and the effect it created. Select a channel to tune in.</p>
+    <p class="section-intro reveal">Ten signals, decoded: the insight behind each idea and the effect it created. Select a channel to tune in.</p>
 
     <div class="deck reveal">
       <div class="deck-channels" role="tablist" aria-label="Campaign channels">
@@ -836,14 +940,17 @@ h2.section-title{
         <button class="deck-channel" data-target="4" role="tab" aria-selected="false"><span class="ch-num">CH.05</span><span class="ch-name">Artificial Independence</span><span class="ch-tag">Independence Day</span></button>
         <button class="deck-channel" data-target="5" role="tab" aria-selected="false"><span class="ch-num">CH.06</span><span class="ch-name">Sunkranti</span><span class="ch-tag">Sustainability Innovation</span></button>
         <button class="deck-channel" data-target="6" role="tab" aria-selected="false"><span class="ch-num">CH.07</span><span class="ch-name">RJ Sia</span><span class="ch-tag">AI Innovation</span></button>
+        <button class="deck-channel" data-target="7" role="tab" aria-selected="false"><span class="ch-num">CH.08</span><span class="ch-name">Citroen x MS Dhoni</span><span class="ch-tag">Record-Breaking Campaign</span></button>
+        <button class="deck-channel" data-target="8" role="tab" aria-selected="false"><span class="ch-num">CH.09</span><span class="ch-name">Green City 91.1 FM</span><span class="ch-tag">Brand Transformation</span></button>
+        <button class="deck-channel" data-target="9" role="tab" aria-selected="false"><span class="ch-num">CH.10</span><span class="ch-name">Beda Bro</span><span class="ch-tag">Drug Awareness</span></button>
       </div>
 
       <div class="deck-readout">
         <div class="deck-detail active" data-panel="0" role="tabpanel">
           <span class="deck-kicker">Ket Gala | Culture-First Viral Campaign</span>
           <h3 class="deck-title">Ket Gala</h3>
-          <p class="deck-copy"><span class="deck-label">The play:</span> A hyper-local, red-carpet spoof of the global Met Gala, decoded through Bengaluru's street-smart humour, irreverent styling and witty commentary instead of a straight copy of the trend.</p>
-          <p class="deck-copy"><span class="deck-label">The effect:</span> A culture-first content property that made a global format instantly shareable in Kannada, positioning Radio City as a brand that reimagines trends rather than just following them.</p>
+          <p class="deck-copy"><span class="deck-label">The play:</span> A hyper-local, red-carpet spoof of the global Met Gala, decoded through Bengaluru's street-smart humour, irreverent styling and witty commentary, doubling as an awareness drive against single-use plastic instead of a straight copy of the trend.</p>
+          <p class="deck-copy"><span class="deck-label">The effect:</span> A culture-first content property that made a global format instantly shareable in Kannada, folding an environmental message into pure entertainment and positioning Radio City as a brand that reimagines trends rather than just following them.</p>
           <div class="deck-flow">
             <span class="flow-node">Global trend</span><span class="flow-arrow"></span>
             <span class="flow-node">Local insight</span><span class="flow-arrow"></span>
@@ -949,30 +1056,104 @@ h2.section-title{
           </div>
           <a class="deck-watch" href="https://www.instagram.com/radiocitykannada/reel/DQejXpPEtZz/" target="_blank" rel="noopener">Watch the signal <span>→</span></a>
         </div>
+
+        <div class="deck-detail" data-panel="7" role="tabpanel">
+          <span class="deck-kicker">Citroen x MS Dhoni | 24-City Integrated Campaign</span>
+          <h3 class="deck-title">Cheer Kar, Jeet Ko Lock Kar</h3>
+          <p class="deck-copy"><span class="deck-label">The play:</span> A national campaign built around MS Dhoni for Citroen, spanning audio, digital, film and multi-city activations into one coordinated push across 24 cities rather than a single-market moment.</p>
+          <p class="deck-copy"><span class="deck-label">The effect:</span> The scale and coordination of the rollout earned an official entry in the India Book of Records, turning a celebrity partnership into a measurable, record-setting piece of brand activation.</p>
+          <div class="deck-flow">
+            <span class="flow-node">Celebrity partnership</span><span class="flow-arrow"></span>
+            <span class="flow-node">National architecture</span><span class="flow-arrow"></span>
+            <span class="flow-node">24-city activation</span><span class="flow-arrow"></span>
+            <span class="flow-node">Cross-format execution</span><span class="flow-arrow"></span>
+            <span class="flow-node">Record-setting scale</span>
+          </div>
+          <a class="deck-watch" href="https://www.theweek.in/wire-updates/business/2024/06/22/dcm11-radio-city.html" target="_blank" rel="noopener">Read the coverage <span>→</span></a>
+        </div>
+
+        <div class="deck-detail" data-panel="8" role="tabpanel">
+          <span class="deck-kicker">Green City 91.1 FM x Maruti Suzuki | India's First Ecological FM Brand</span>
+          <h3 class="deck-title">Green City 91.1 FM</h3>
+          <p class="deck-copy"><span class="deck-label">The play:</span> Back in 2010, well before sustainability was a mainstream brand conversation, the station itself became the campaign: Radio City 91.1 FM turned into "Green City 91.1 FM" in partnership with Maruti Suzuki, its sound, sign-offs and jingles rebuilt around the idea.</p>
+          <p class="deck-copy"><span class="deck-label">The effect:</span> Established as India's first ecological FM brand, an early, category-defining template for purpose-led, sponsor-backed radio programming that the wider industry would only catch up to years later.</p>
+          <div class="deck-flow">
+            <span class="flow-node">Early sustainability insight</span><span class="flow-arrow"></span>
+            <span class="flow-node">Category-first positioning</span><span class="flow-arrow"></span>
+            <span class="flow-node">Sponsor partnership</span><span class="flow-arrow"></span>
+            <span class="flow-node">Full-frequency rebrand</span><span class="flow-arrow"></span>
+            <span class="flow-node">Industry-first status</span>
+          </div>
+          <a class="deck-watch" href="https://www.afaqs.com/media-briefs/45887_green-city-911fm" target="_blank" rel="noopener">Read the coverage <span>→</span></a>
+        </div>
+
+        <div class="deck-detail" data-panel="9" role="tabpanel">
+          <span class="deck-kicker">Beda Bro | Government of Karnataka Drug-Awareness Campaign</span>
+          <h3 class="deck-title">Beda Bro</h3>
+          <p class="deck-copy"><span class="deck-label">The play:</span> A drug-awareness campaign for the Government of Karnataka that swapped clinical warnings for language young people actually use: "beda" is Kannada for "don't want it."</p>
+          <p class="deck-copy"><span class="deck-label">The effect:</span> Turned a heavy public-health subject into a peer-to-peer, culturally fluent message, continuing a pattern of pairing government partnerships with youth-first creative rather than institutional messaging.</p>
+          <div class="deck-flow">
+            <span class="flow-node">Public health mandate</span><span class="flow-arrow"></span>
+            <span class="flow-node">Cultural language insight</span><span class="flow-arrow"></span>
+            <span class="flow-node">Peer-to-peer tone</span><span class="flow-arrow"></span>
+            <span class="flow-node">Government partnership</span><span class="flow-arrow"></span>
+            <span class="flow-node">Youth-first messaging</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- NEW SIGNALS (VENTURES) -->
+<section class="section" id="s6" data-freq="105.0" data-station="NEW SIGNALS">
+  <div class="wrap">
+    <div class="eyebrow reveal">New Signals</div>
+    <h2 class="section-title reveal">Stations she's launched.</h2>
+    <p class="section-intro reveal">Not every frequency was one she joined. These are platforms built and shipped from zero, each with press coverage of its own.</p>
+    <div class="venture-grid reveal">
+      <a class="venture-card" href="https://www.business-standard.com/content/press-releases-ani/sminco-in-the-game-changer-in-influencer-marketing-124061300896_1.html" target="_blank" rel="noopener">
+        <div class="venture-tag">Founder | Influencer Marketing Platform</div>
+        <div class="venture-name">Sminco</div>
+        <div class="venture-desc">An automated, multi-sided influencer marketplace connecting brands with creators through AI-driven matching, real-time analytics and campaign management, built to make influencer marketing measurable instead of guesswork.</div>
+        <div class="venture-link">Press coverage <span>→</span></div>
+      </a>
+      <a class="venture-card" href="https://www.musicbusinessworldwide.com/beatchain-and-radio-city-india-to-launch-new-muzartdisco-independent-artist-discovery-platform/" target="_blank" rel="noopener">
+        <div class="venture-tag">Founder | Artist Discovery Platform</div>
+        <div class="venture-name">Muzartdisco</div>
+        <div class="venture-desc">India's first one-stop platform for independent artists, built with UK music-tech partner Beatchain: 360-degree career tools from release and promotion to mentoring, with artists retaining full rights to their music.</div>
+        <div class="venture-link">Press coverage <span>→</span></div>
+      </a>
+      <a class="venture-card" href="https://m.thewire.in/article/ptiprnews/radio-city-joins-hands-with-triton-digital-to-launch-global-podcast-platform-rc-swappr" target="_blank" rel="noopener">
+        <div class="venture-tag">Founder | Global Podcast Platform</div>
+        <div class="venture-name">RC Swappr</div>
+        <div class="venture-desc">A podcast platform built with Triton Digital, live in 120+ countries across horror, comedy, relationships and spirituality in Hindi and English, with a free app and a monthly leaderboard for discovery.</div>
+        <div class="venture-link">Press coverage <span>→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- THE BAND -->
-<section class="section" id="s5" data-freq="106.2" data-station="THE BAND">
+<section class="section" id="s7" data-freq="106.2" data-station="THE BAND">
   <div class="wrap">
     <div class="eyebrow reveal">The Band</div>
     <h2 class="section-title reveal">Building Tribe along with Content</h2>
     <div class="band-layout reveal">
       <ul class="band-list">
-        <li>Built, mentored and led a 26 member team with content creators, social managers, producers, editors and creative talent</li>
-        <li>Cut agency dependence by 30–40% by building in-house capability and cleaner process</li>
+        <li>Leads a matrixed team of 36+ creative, digital and communications professionals across a multi-brand portfolio</li>
+        <li>Cut agency dependence by 30–40% by building in-house capability with an AI-first production model</li>
         <li>Delivered 115–125% of annual targets consistently</li>
         <li>Set editorial frameworks governing tone, cadence and brand voice across multiple regional markets simultaneously</li>
-        <li>Runs on data, not gut feel. KPI dashboards across Meta Insights, YouTube Analytics and Tableau track everything from watch time to CTR</li>
+        <li>Runs on data, not gut feel. KPI dashboards across Meta Insights, YouTube Analytics, Tableau and Google AI tools track everything from watch time to CTR</li>
+        <li>Serves as primary communications strategist for the C-suite, building the thought-leadership platform for senior executives</li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- CHARTS -->
-<section class="section" id="s6" data-freq="108.0" data-station="ON THE CHARTS">
+<section class="section" id="s8" data-freq="108.0" data-station="ON THE CHARTS">
   <div class="wrap">
     <div class="eyebrow reveal">On The Charts</div>
     <h2 class="section-title reveal">Spotlight</h2>
@@ -981,21 +1162,32 @@ h2.section-title{
       <div class="chart-item"><div class="chart-rank">02</div><div><div class="chart-name">Most Engaging Podcast | ACEF Gold Award</div><div class="chart-org">ACEF</div></div><div class="chart-year">2023</div></div>
       <div class="chart-item"><div class="chart-rank">03</div><div><div class="chart-name">Most Innovative Talk Show</div><div class="chart-org">New York Festivals Radio Awards</div></div><div class="chart-year">2023</div></div>
       <div class="chart-item"><div class="chart-rank">04</div><div><div class="chart-name">RJ of the Year</div><div class="chart-org">India Radio Forum</div></div><div class="chart-year">2010 · 2012 · 2019</div></div>
+      <div class="chart-item"><div class="chart-rank">05</div><div><div class="chart-name">CEO Award</div><div class="chart-org">Radio City</div></div><div class="chart-year">2014 · 2022</div></div>
+    </div>
+
+    <div class="sub-heading reveal">Education &amp; Certifications</div>
+    <div class="chart-list reveal">
+      <div class="chart-item"><div class="chart-rank">01</div><div><div class="chart-name">BE in Computer Science</div><div class="chart-org">Visvesvaraya Technological University</div></div><div class="chart-year">2007</div></div>
+      <div class="chart-item"><div class="chart-rank">02</div><div><div class="chart-name">Strategic Digital Marketing</div><div class="chart-org">Cambridge Judge Business School</div></div><div class="chart-year">2019</div></div>
+      <div class="chart-item"><div class="chart-rank">03</div><div><div class="chart-name">Google AI Professional Certificate</div><div class="chart-org">Udemy</div></div><div class="chart-year">2026</div></div>
+      <div class="chart-item"><div class="chart-rank">04</div><div><div class="chart-name">AI Generalist</div><div class="chart-org">Outskill</div></div><div class="chart-year">2026</div></div>
     </div>
   </div>
 </section>
 
 <!-- SIGN OFF -->
-<section class="section signoff" id="s7" data-freq="87.9" data-station="SIGN OFF">
+<section class="section signoff" id="s9" data-freq="87.9" data-station="SIGN OFF">
   <div class="wrap">
     <div class="eyebrow reveal">Frequency Match</div>
     <div class="signoff-grid reveal">
       <div>
-        <p class="signoff-body">Multilingual by instinct. AI-first by design. Leads a large creator team.</p>
+        <p class="signoff-body">Multilingual across English, Hindi, Tamil, Telugu and Kannada. AI-first by design. Leads a 36-person creative team.</p>
         <div class="contact-row">
           <a class="contact-pill" href="mailto:sunethra.nagaraj@gmail.com"><span class="dot"></span> sunethra.nagaraj@gmail.com</a>
           <a class="contact-pill" href="tel:+919538213133"><span class="dot"></span> +91 95382 13133</a>
-          <a class="contact-pill" href="https://acesse.one/sunethra" target="_blank" rel="noopener"><span class="dot"></span> acesse.one/sunethra</a>
+          <a class="contact-pill" href="https://sunethranagaraj-art.github.io/sunethra-interactive-profile/" target="_blank" rel="noopener"><span class="dot"></span> Portfolio</a>
+          <a class="contact-pill" href="https://www.linkedin.com/in/sunethra-nagaraj/" target="_blank" rel="noopener"><span class="dot"></span> LinkedIn</a>
+          <a class="contact-pill" href="https://www.instagram.com/naan_nethra/" target="_blank" rel="noopener"><span class="dot"></span> Instagram</a>
           <a class="contact-pill" href="#s0"><span class="dot"></span> Retune from the top</a>
         </div>
       </div>
